@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      #txt {
+        font-family: Snell Roundhand, cursive;
+      }
+      #mySidebar {
+        background-color: #debe02;
+      }
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #fadce6;
+        font-size: 16px;
+      }
+      .w3-half img {
+        margin-bottom: -6px;
+        margin-top: 16px;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      .w3-half img:hover {
+        opacity: 1;
+      }
+      .w3-panel {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      #centra {
+        font-size: 5;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: -15px;
+      }
+      #rodape {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .w3-light-grey {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-collapse w3-top w3-large w3-padding"
+      style="z-index: 3; width: 300px; font-weight: bold"
+      id="mySidebar"
+    >
+      <br />
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-button w3-hide-large w3-display-topleft"
+        style="width: 100%; font-size: 22px"
+        >Close Menu</a
+      >
+      <div class="w3-container">
+        <h3 class="w3-padding-64">
+          <b>Salão<br />Novo Visual</b>
+        </h3>
+      </div>
+      <div class="w3-bar-block">
+        <a
+          href="#"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Home</a
+        >
+        <a
+          href="#showcase"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Nossos Resultados</a
+        >
+        <a
+          href="#services"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Nossos serviços</a
+        >
+        <a
+          href="#designers"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Nosso time</a
+        >
+        <a
+          href="#packages"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Planos</a
+        >
+        <a
+          href="#contact"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Contato</a
+        >
+      </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header
+      class="w3-container w3-top w3-hide-large w3-text-yellow w3-xlarge w3-padding"
+    >
+      <a
+        href="javascript:void(0)"
+        class="w3-button w3-yellow w3-margin-right"
+        onclick="w3_open()"
+        >☰</a
+      >
+      <span class="w3-text-yellow">Salão Novo Visual</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+      <!-- Header -->
+      <div class="w3-panel" style="margin-top: 100px" id="showcase">
+        <img src="imgblz/logo.png" style="width: 20%" />
+      </div>
+      <div id="centra">
+        <h3 id="txt" class="w3-text-yellow" style="font-size: xx-large">
+          <b>Salão Novo Visual</b>
+        </h3>
+      </div>
+      <div>
+        <h1 class="w3-xxxlarge w3-text-yellow"><b>Nossos resultados</b></h1>
+        <hr style="width: 50px; border: 5px solid yellow" class="w3-round" />
+      </div>
+      <!-- Photo grid (modal) -->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <img
+            src="imgblz/ac1.png"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Concrete meets bricks"
+          />
+          <img
+            src="imgblz/ac2.png"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Light, white and tight scandinavian design"
+          />
+        </div>
+
+        <div class="w3-half">
+          <img
+            src="imgblz/ac3.png"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="White walls with designer chairs"
+          />
+          <img
+            src="imgblz/ac4.png"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Windows for the atrium"
+          />
+        </div>
+      </div>
+
+      <!-- Modal for full size images on click-->
+      <div
+        id="modal01"
+        class="w3-modal w3-black"
+        style="padding-top: 0"
+        onclick="this.style.display='none'"
+      >
+        <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+        <div
+          class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64"
+        >
+          <img id="img01" class="w3-image" />
+          <p id="caption"></p>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="w3-container" id="services" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-yellow"><b>Nossos serviços</b></h1>
+        <hr style="width: 50px; border: 5px solid yellow" class="w3-round" />
+        <p>O que nós oferecemos para nossos clientes?</p>
+        <li><b>Loiro Platinado</b></li>
+        <p style="text-align: justify">
+          Loiro platinado é a proposta clara e acinzentada para os cabelos. O
+          loiro platinado é conhecido pelo tom frio, puxando para o cinza, bem
+          distante dos fios amarelados. Ele combina muito bem com peles claras e
+          rosadas, e geralmente entrega um efeito moderno, glamuroso e mais
+          opaco nos fios.
+        </p>
+        <li><b>Loiro Acinzentado </b></li>
+        <p style="text-align: justify">
+          O loiro acinzentado, por definição, é um tom mais frio, com reflexos
+          próximos ao prateado, ao cinza ou ao branco.
+        </p>
+        <li><b>Loiro Pérola</b></li>
+        <p style="text-align: justify">
+          O cabelo loiro perolado é aquele tom de loiro claríssimo, muito amado
+          pelas famosas e pelas grandes personalidades, que buscam imitar a cor
+          presente nas pérolas. Claro que esse tom, assim como os outros tons de
+          loiro, pode ter pequenas variações nas nuances. Mas de qualquer forma,
+          é um belo tom para se ter e cultivar.
+        </p>
+      </div>
+
+      <!-- Designers -->
+      <div class="w3-container" id="designers" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-yellow"><b>Nosso Time</b></h1>
+        <hr
+          style="width: 50px; border: 5px solid yelloww3-text-yellow"
+          class="w3-round"
+        />
+        <p>Quem somos?</p>
+        <p style="text-align: justify">
+          Estamos no mercado desde 2010 e, por isso, somos uma dos estúdios de
+          beleza mais tradicionais da cidade. Estamos localizados na Avenida
+          Paulista, onde recebemos com carinho todos os dias nossos clientes. O
+          Nosso salão conta com profissionais capacitados e formados e com
+          vários anos de experiência no mercado.
+        </p>
+        <p><b>Quem são eles? </b>:</p>
+      </div>
+
+      <!-- The Team -->
+      <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="imgblz/p1.png" alt="John" style="width: 100%" />
+            <div class="w3-container">
+              <h3>John Doe</h3>
+              <p class="w3-opacity">Cabeleleiro</p>
+              <p>Especialista em loiros</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="imgblz/p2.png" alt="Mike" style="width: 100%" />
+            <div class="w3-container">
+              <h3>Mike</h3>
+              <p class="w3-opacity">Cabeleleiro</p>
+              <p>Especialista em loiros</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="imgblz/p3.png" alt="Jane" style="width: 100%" />
+            <div class="w3-container">
+              <h3>Jane Doe</h3>
+              <p class="w3-opacity">Cabeleleiro</p>
+              <p>Especialista em loiros</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Packages / Pricing Tables -->
+      <div class="w3-container" id="packages" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-yellow"><b>Planos</b></h1>
+        <hr style="width: 50px; border: 5px solid yellow" class="w3-round" />
+        <p style="text-align: justify">
+          Confira aqui nossos planos e garante seu bem estar!
+        </p>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-half w3-margin-bottom">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-yellow w3-xlarge w3-padding-32">PRO</li>
+            <li class="w3-padding-16">Lavagem</li>
+            <li class="w3-padding-16">Corte</li>
+            <li class="w3-padding-16">Descolorante PRO</li>
+            <li class="w3-padding-16">Protetor anti emborrachamento</li>
+            <li class="w3-padding-16">Escova</li>
+            <li class="w3-padding-16">
+              <h2>R$ 799,99</h2>
+              <span class="w3-opacity">PRO</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button
+                class="w3-button w3-yellow w3-padding-large w3-hover-white"
+              >
+                Assinar
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="w3-half">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-yellow w3-xlarge w3-padding-32">PREMIUM</li>
+            <li class="w3-padding-16">Lavagem</li>
+            <li class="w3-padding-16">Corte</li>
+            <li class="w3-padding-16">Descolorante Premium</li>
+            <li class="w3-padding-16">Protetor anti emborrachamento</li>
+            <li class="w3-padding-16">Escova</li>
+            <li class="w3-padding-16">
+              <h2>R$ 999,99</h2>
+              <span class="w3-opacity">PREMIUM</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button
+                class="w3-button w3-yellow w3-padding-large w3-hover-white"
+              >
+                Assinar
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="w3-container" id="contact" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-yellow"><b>Contato</b></h1>
+        <hr style="width: 50px; border: 5px solid yellow" class="w3-round" />
+        <p>Ficou com alguma dúvida? nos mande uma email.</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-section">
+            <label>Nome</label>
+            <input
+              class="w3-input w3-border"
+              type="text"
+              name="Name"
+              required
+            />
+          </div>
+          <div class="w3-section">
+            <label>Email</label>
+            <input
+              class="w3-input w3-border"
+              type="text"
+              name="Email"
+              required
+            />
+          </div>
+          <div class="w3-section">
+            <label>Menssagem</label>
+            <input
+              class="w3-input w3-border"
+              type="text"
+              name="Message"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w3-button w3-block w3-padding-large w3-yellow w3-margin-bottom"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+
+      <!-- End page content -->
+    </div>
+
+    <!-- W3.CSS Container -->
+    <div class="w3-center w3-light-grey w3-container">
+      <p style="margin-top: 0px" class="w3-center">Acesse nossas redes:</p>
+      <div style="margin-top: -20px">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-whatsapp w3-hover-opacity"></i>
+      </div>
+      <p style="margin-top: 0px">
+        <a href="#"><i class="fa fa-fw fa-map-marker"></i> Nossa localização</a>
+      </p>
+      <p style="margin-top: -10px">
+        <i class="fa fa-fw fa-phone"></i> 0044123123
+      </p>
+      <p style="margin-top: -10px">
+        <i class="fa fa-fw fa-envelope"></i> ex@mail.com
+      </p>
+      <p class="w3-right">
+        Powered by
+        <a
+          href="https://www.instagram.com/macmidia.digital/"
+          title="W3.CSS"
+          target="_blank"
+          class="w3-hover-opacity"
+          >Sérgio MAC MIDIA</a
+        >
+      </p>
+    </div>
+
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+    </script>
+  </body>
+</html>
